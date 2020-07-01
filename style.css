@@ -92,6 +92,7 @@ tt, u, ul, var, video {
   float: center;
   width: 100%;
   border: 0;
+  size: cover;
 }
 
 .caption {
