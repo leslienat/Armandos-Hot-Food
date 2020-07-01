@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+*, a, abbr, acronym, address, area, article, aside, b, applet, audio 
+b, bdo, big, blockquote, body, button, center, caption, canvas, 
+caption, cite, code, col, colgroup, dd, del, details, dfn, div, 
+dd, dl, dt, em, embed, figcaption, figure, fieldset, footer, 
+form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, 
+html, i, iframe, images, img, ins, kbd, label, legend, li, 
+map, mark, menu, navigation, object, ol, output, p, param, pre, 
+q, ruby, samp, section, small, span, strong, strike, sub, summary, 
+sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, 
+tt, u, ul, var, video {
+	border:0;
+	margin:0; 
+	padding:0; 
+	vertical-align:baseline;
+}
+
+/* Start Navigation Menu */
+.nav a{
+	text-decoration: none;
+	color: inherit;
+	font-weight: 400;
+}
+
+.nul{
+	color: #000000;
+	display: block;
+	font-size: 1em;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	-webkit-transition: max-height 0.4s;
+	-ms-transition: max-height 0.4s;
+	-moz-transition: max-height 0.4s;
+	-o-transition: max-height 0.4s;
+	transition: max-height 0.4s;
+}
+
+.nul li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.nul li:hover, .nul li:active {
+	color: #97d6d9;
+}
+
+.mobilenav {
+	background: #DD2A0E;
+	box-sizing: border-box;
+	color: #000000;
+	cursor: pointer;
+	display: none;
+	padding: 15px 10px;
+	text-align: left;
+	width: 100%;
+}
+/* End Navigation Menu */
