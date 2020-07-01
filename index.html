@@ -5,6 +5,16 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrap.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			$("#slider").responsiveSlides({
+				maxwidth: 960,
+				pause: true,
+				speed: 800
+			});
+		});
+	</script>
 </head>
 <body>
 	<!-- Start Header -->
@@ -35,7 +45,12 @@
 
 	<!-- Start Content -->
 	<div class="content">
-		
+		<div>
+			<ul class="rslides" id="slider">
+				<li><img src="images/slide1.jpg"></li>
+				<li><img src="images/slide2.jpg"></li>
+			</ul>
+		</div>
 	</div> <!-- End Content -->
 
 	<!-- Start Footer -->
