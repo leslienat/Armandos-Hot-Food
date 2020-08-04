@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Start Meta Tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A family owned Food Truck business serving authentic Mexican food made using fresh ingredients on the daily.">
+    <meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- Meta Tags -->
+
+    <div></div>
+
+	<title>Menu | Armando's Hot Food</title>
+	
+	<!-- Start CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrap.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- End CSS -->
+	
+	<!-- Start Javascript/JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171398934-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-171398934-1');
+	</script><!-- End Javascript/JQuery -->
+</head>
+<body>
+	<!-- Start Header -->
+	<div class="header">
+		<!-- <img alt="logo" id="logo" src="images/logo.svg"> -->
+		<img id="logo" src="images/Logo.svg">
+
+		<!-- Start Social Icons -->
+		<div class="social">
+			
+		</div>
+
+		<!-- Start Navigation Menu -->
+		<div class="nav">
+			<div class="mobilenav">&#9776; Menu</div>
+				<ul class="nul">
+					<a href="/"><li>Home</li></a>
+					<a href="Menu.html"><li>Menu</li></a>
+					<a href="Contact.html"><li>Contact</li></a>
+				</ul>
+			</div>
+			<script>
+				$('.mobilenav').on('click', function(){
+					$('.nul').toggleClass('showing'); 
+				});
+			</script> <!-- End Navigation Menu -->
+	</div> <!-- End Header -->
+
+	<!-- Start Content -->
+	<div class="container">
+		<div class="menu">
+			<div class="w3-container">
+				<div class="w3-row">
+					<a href="javascript:void(0)" onclick="openCity(event, 'Food');">
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Food</div>
+					</a>
+					<a href="javascript:void(0)" onclick="openCity(event, 'Drinks');">
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Drinks</div>
+					</a>
+					<a href="javascript:void(0)" onclick="openCity(event, 'Snacks');">
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Snacks</div>
+					</a>
+				</div>
+
+				<div id="Food" class="w3-container item" style="display: block">
+					<h5>Asada Fries - 8.00</h5>
+					<h5>Bistec Encebollado - 8.00</h5>
+						<p>Includes rice and beans</p>
+					<h5>Bistec Ranchero - 8.00</h5>
+					<h5>Burritos - 7.00</h5>
+					<h5>Cemitas - 8.00</h5>
+					<h5>Cheesburger - 6.00</h5>
+					<h5>Cocteles - 8.00</h5>
+					<h5>Flautas - 8.00</h5>
+					<h5>Gorditas - 3.00</h5>
+					<h5>Huevos con Carne</h5>
+						<p>Options include ham, bacon, chorizo</p>
+					<h5>Huevos a la Mexicana - 8.00</h5>
+					<h5>Huevos Rancheros - 8.00</h5>
+					<h5>Menudo -  sml 6.00 lrg 8.00</h5>
+						<p>Available saturdays, sundays</p>
+					<h5>Pollo a la Plancha - 8.00</h5>
+					<h5>Quesadillas - 8.00</h5>
+					<h5>Sopes - 3.00</h5>
+					<h5>Steak Sandwich - 7.00</h5>
+					<h5>Super Nachos - 7.00</h5>
+					<h5>Tacos - 2.00</h5>
+						<p>Options include asada, camarron, pescado, lengua, tripa, pollo, chorizo, buche, carnitas, barbacoa, cabeza, al pastor, vegetarianos</p>
+					<h5>Tortas - 7.00</h5>
+					<h5>Tostadas - 3.00</h5>
+						<p>Options include octopus, shrimp, crab, fish, mixed</p>
+					<h5>Wet Burritos - 8.00</h5>
+				</div>
+				<div id="Drinks" class="w3-container item" style="display: none">
+					<h5>Soda de Lata - 1.00</h5>
+					<h5>Gotita - 3.00</h5>
+				</div>
+				<div id="Snacks" class="w3-container item" style="display: none">
+					<h5>Chips - 2.00</h5>
+				</div>
+			</div>
+
+			<script>
+				function openCity(evt, itemName) {
+					var i, x, tablinks;
+					x = document.getElementsByClassName("item");
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablink");
+					for (i = 0; i < x.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
+					}
+
+					document.getElementById(itemName).style.display = "block";
+					evt.currentTarget.firstElementChild.className += " w3-border-blue";
+				}
+			</script>
+		</div>
+	</div> <!-- End Content -->
+
+	<!-- Start Footer -->
+	<div class="footer">
+		<div class="social">
+			<a href="https://www.facebook.com/ArmandosHotFood" target="_blank"><img src="images/fb.png" id="fb"></a>
+			<a href="https://www.instagram.com/armandoshotfood/" target="_blank"><img src="images/ig.png" id="ig"></a>
+		</div>
+		<p>&#169; 2020 Armando's Hot Food
+			<br>Web Design by <a href="https://github.com/leslienochoa" target="_blank">Leslie Ochoa</p>
+	</div> <!-- End Footer -->
+</body>
+</html>

@@ -88,6 +88,18 @@ h1 {
 	min-height: 500px;
 }
 
+.menu {
+	margin: auto;
+	max-width: 75%;
+	padding: 20px;
+}
+
+.item p {
+	color: gray;
+	font-size: 85%;
+	text-indent: 3%;
+}
+
 /* Start Footer */
 .footer {
 	background-color: #CC4F0A;
