@@ -85,7 +85,7 @@ h1 {
 /* End Navigation Menu */
 
 .content {
-	min-height: 100px;
+	min-height: 500px;
 }
 
 /* Start Footer */
@@ -173,6 +173,9 @@ h1 {
       display: block;
     }
 
+    .content {
+    	min-height: 550px;
+    }
 }
 
 @media screen and (max-width: 720px) {
