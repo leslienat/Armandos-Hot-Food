@@ -84,9 +84,9 @@ h1 {
 }
 /* End Navigation Menu */
 
-/* Start Slider */
-
-/* End Slider */
+.content {
+	min-height: 100px;
+}
 
 /* Start Footer */
 .footer {
@@ -96,6 +96,32 @@ h1 {
 	padding: 10px;
 	text-align: center;
 	bottom: 0;
+}
+
+.footer a {
+	color: #ffe4b5;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: #E5A784;
+	text-decoration: none;
+}
+
+#fb, #ig {
+	padding: 5px;
+}
+
+#fb {
+	width: 35px;
+}
+
+#ig {
+	width: 45px;
+}
+
+.social img:hover {
+	opacity: 50%
 }
 /* End Footer */
 

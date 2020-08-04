@@ -1,10 +1,9 @@
-function setup() {
-	loadJSON("https://script.google.com/macros/s/AKfycbx5R83RGM4McNeHkNrBxIRjDuJj32VZr40ONQ5l5A/exec", gotData, 'jsonp');
-}
+var staticURL = 'https://script.google.com/macros/s/AKfycbx5R83RGM4McNeHkNrBxIRjDuJj32VZr40ONQ5l5A/exec'
 
-function gotData(data) {
-	println(data);
-}
+$.getJSON(staticURL, function(data) {
+	console.log("Inside the function")
+	console.log(data)
+});
 
 /* function menuTemplate(menu) {
 	return
