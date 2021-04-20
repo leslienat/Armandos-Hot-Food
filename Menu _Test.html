@@ -12,18 +12,30 @@
     <ul id="courses"></ul>
 
     <!-- Don't need jQuery for Tabletop, but using it for this example -->
-    <script type="text/javascript" src="../common/jquery.js"></script>
-    <script type="text/javascript" src="../../src/tabletop.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="tabletop.js"></script>
     <script type="text/javascript">
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/u/0/d/1b4ue0Q1pk1FMjEYNCDLatR_pczWxlhkp3VFT03m1X7k/pub?hl=en_US&hl=en_US&hl=en_US&output=html#';
+      /* var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdE5OcDE1SENpT1g2R2JEX2tnZ3ZIWHc&output=html';
 
-      $(document).ready( function() {
+     $(document).ready( function() {
         Tabletop.init( { key: public_spreadsheet_url,
                          callback: showInfo,
                          proxy: 'https://flatware-live.s3.amazonaws.com',
                          debug: true } )
-      })
+      }) */
         
+     	function init() {
+          Papa.parse('https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdE5OcDE1SENpT1g2R2JEX2tnZ3ZIWHc&output=html', {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+            console.log(data)
+          }
+        })
+		
+		window.addEventListener('DOMContentLoaded', init)
+
       function showInfo(data, tabletop) {
         $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
 
