@@ -1,64 +1,33 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <div id="table_info"></div>
-    
-    <div id="explanation"></div>
-    
-    <h2>Let's talk about cats</h2>
-    <ul id="cats"></ul>
+    <p id="food"></p>
 
-    <h2>Let's learn a thing or two</h2>
-    <ul id="courses"></ul>
-
-    <!-- Don't need jQuery for Tabletop, but using it for this example -->
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="tabletop.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
     <script type="text/javascript">
-      /* var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdE5OcDE1SENpT1g2R2JEX2tnZ3ZIWHc&output=html';
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRB4E_6RnpLP1wWMjqcwsUvotNATB8Np3OntlXb7066ULcAHI9oqqRhucltFifPTYNd7DRNRE56oTdt/pub?output=csv';
 
-     $(document).ready( function() {
-        Tabletop.init( { key: public_spreadsheet_url,
-                         callback: showInfo,
-                         proxy: 'https://flatware-live.s3.amazonaws.com',
-                         debug: true } )
-      }) */
-        
-     	function init() {
-          Papa.parse('https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdE5OcDE1SENpT1g2R2JEX2tnZ3ZIWHc&output=html', {
+      function init() {
+        Papa.parse(public_spreadsheet_url, {
           download: true,
           header: true,
-          complete: function(results) {
-            var data = results.data
-            console.log(data)
-          }
+          complete: showInfo
         })
-		
-		window.addEventListener('DOMContentLoaded', init)
-
-      function showInfo(data, tabletop) {
-        $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
-
-        $.each( tabletop.sheets(), function(i, sheet) {
-          $("#table_info").append("<p>" + sheet.name + " has " + sheet.column_names.join(", ") + "</p>");
-        });
-
-        $.each( tabletop.sheets("Cats").all(), function(i, cat) {
-          var cat_li = $('<li><h4>' + cat.name + '</h4></li>')
-          cat_li.append(cat.description);
-          cat_li.appendTo("#cats");
-        })
-
-        $.each( tabletop.sheets("Courses").all(), function(i, course) {
-          var cat_li = $('<li><h4>' + course.title + '</h4></li>')
-          cat_li.append(course.description);
-          cat_li.append("<p>Cost: $" + course.cost + "</p>");
-          cat_li.appendTo("#courses");
-        })
-        
       }
 
-      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");    
+      window.addEventListener('DOMContentLoaded', init)
+
+      function showInfo(results) {
+        var data = results.data
+
+        // data comes through as a simple array since simpleSheet is turned on
+        alert("Successfully processed " + data.length + " rows!")
+        document.getElementById("food").innerHTML = "<strong>Foods:</strong> " + [ data[0].Name, data[1].Name, data[2].Name ].join(", ");
+        console.log(data);
+      }
+
+      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
     </script>
+    <p><strong>This example is only going to work if it's on the internet or on a local server!</strong> To run a local server, run "terminal" or "command prompt" and run the command <code>python -m http.server</code> or <code>python -m SimpleHTTPServer</code> (whichever one works, really, and you might even need to <a href="http://littlecolumns.com/tools/python-wrangler/">install Python</a>). Then visit <a href="http://localhost:8000/">http://localhost:8000</a> and you'll be all set.</p>
   </body>
 </html>
