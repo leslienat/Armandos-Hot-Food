@@ -3,12 +3,12 @@
 <head>
 	<!-- Start Meta Tags -->
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A family owned Food Truck business serving authentic Mexican food made using fresh ingredients on the daily.">
-    <meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- Meta Tags -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A family owned Food Truck business serving authentic Mexican food made using fresh ingredients on the daily.">
+	<meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- Meta Tags -->
 
-    <div></div>
+	<div></div>
 
 	<title>Menu | Armando's Hot Food</title>
 	
@@ -25,12 +25,12 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171398934-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-	  gtag('config', 'UA-171398934-1');
-	</script><!-- End Javascript/JQuery -->
+		gtag('config', 'UA-171398934-1');
+	</script> <!-- End Javascript/JQuery -->
 </head>
 <body>
 	<!-- Start Header -->
@@ -46,17 +46,17 @@
 		<!-- Start Navigation Menu -->
 		<div class="nav">
 			<div class="mobilenav">&#9776; Menu</div>
-				<ul class="nul">
-					<a href="/"><li>Home</li></a>
-					<a href="Menu.html"><li>Menu</li></a>
-					<a href="Contact.html"><li>Contact</li></a>
-				</ul>
-			</div>
-			<script>
-				$('.mobilenav').on('click', function(){
-					$('.nul').toggleClass('showing'); 
-				});
-			</script> <!-- End Navigation Menu -->
+			<ul class="nul">
+				<a href="/"><li>Home</li></a>
+				<a href="Menu.html"><li>Menu</li></a>
+				<a href="Contact.html"><li>Contact</li></a>
+			</ul>
+		</div>
+		<script>
+			$('.mobilenav').on('click', function(){
+				$('.nul').toggleClass('showing'); 
+			});
+		</script> <!-- End Navigation Menu -->
 	</div> <!-- End Header -->
 
 	<!-- Start Content -->
@@ -75,71 +75,89 @@
 					</a>
 				</div>
 
-				<div id="Food" class="w3-container item" style="display: block">
-					<h5>Asada Fries - 8.00</h5>
-					<h5>Bistec Encebollado - 8.00</h5>
-						<p>Includes rice and beans</p>
-					<h5>Bistec Ranchero - 8.00</h5>
-					<h5>Burritos - 7.00</h5>
-					<h5>Cemitas - 8.00</h5>
-					<h5>Cheesburger - 6.00</h5>
-					<h5>Cocteles - 8.00</h5>
-					<h5>Flautas - 8.00</h5>
-					<h5>Gorditas - 3.00</h5>
-					<h5>Huevos con Carne</h5>
-						<p>Options include ham, bacon, chorizo</p>
-					<h5>Huevos a la Mexicana - 8.00</h5>
-					<h5>Huevos Rancheros - 8.00</h5>
-					<h5>Menudo -  sml 6.00 lrg 8.00</h5>
-						<p>Available saturdays, sundays</p>
-					<h5>Pollo a la Plancha - 8.00</h5>
-					<h5>Quesadillas - 8.00</h5>
-					<h5>Sopes - 3.00</h5>
-					<h5>Steak Sandwich - 7.00</h5>
-					<h5>Super Nachos - 7.00</h5>
-					<h5>Tacos - 2.00</h5>
-						<p>Options include asada, camarron, pescado, lengua, tripa, pollo, chorizo, buche, carnitas, barbacoa, cabeza, al pastor, vegetarianos</p>
-					<h5>Tortas - 7.00</h5>
-					<h5>Tostadas - 3.00</h5>
-						<p>Options include octopus, shrimp, crab, fish, mixed</p>
-					<h5>Wet Burritos - 8.00</h5>
-				</div>
-				<div id="Drinks" class="w3-container item" style="display: none">
-					<h5>Soda de Lata - 1.00</h5>
-					<h5>Gotita - 3.00</h5>
-				</div>
+				<div id="Food" class="w3-container item" style="display: block"></div>
+				<div id="Drinks" class="w3-container item" style="display: none"></div>
 				<div id="Snacks" class="w3-container item" style="display: none">
 					<h5>Chips - 2.00</h5>
 				</div>
-			</div>
+				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+				<script type="text/javascript">
+					// Variables for URLs
+					var food_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=0&single=true&output=csv'
+					var drinks_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=1702788343&single=true&output=csv';
 
-			<script>
-				function openCity(evt, itemName) {
-					var i, x, tablinks;
-					x = document.getElementsByClassName("item");
-					for (i = 0; i < x.length; i++) {
-						x[i].style.display = "none";
-					}
-					tablinks = document.getElementsByClassName("tablink");
-					for (i = 0; i < x.length; i++) {
-						tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
-					}
+      				// Initializing Papa Parse
+      				function init() {
+      					Papa.parse(food_url, {
+      						download: true,
+      						header: true,
+      						complete: showInfoFood
+      					})
 
-					document.getElementById(itemName).style.display = "block";
-					evt.currentTarget.firstElementChild.className += " w3-border-blue";
-				}
-			</script>
-		</div>
-	</div> <!-- End Content -->
+      					Papa.parse(drinks_url, {
+      						download: true,
+      						header: true,
+      						complete: showInfoDrinks
+      					})
+      				}
 
-	<!-- Start Footer -->
-	<div class="footer">
-		<div class="social">
-			<a href="https://www.facebook.com/ArmandosHotFood" target="_blank"><img src="images/fb.png" id="fb"></a>
-			<a href="https://www.instagram.com/armandoshotfood/" target="_blank"><img src="images/ig.png" id="ig"></a>
-		</div>
-		<p>&#169; 2020 Armando's Hot Food
-			<br>Web Design by <a href="https://github.com/leslienochoa" target="_blank">Leslie Ochoa</p>
-	</div> <!-- End Footer -->
-</body>
-</html>
+      				window.addEventListener('DOMContentLoaded', init)
+
+      				// Looping Array Elements for Food
+      				function showInfoFood(results) {
+      					var food = results.data;
+      					var i;
+
+      					text = "<h5>";
+      					for (i = 0; i < food.length; i++) {
+      						text += food[i].Item + " - " + food[i].Price + "</h5>"+ "<p>" + food[i].Options + " " +food[i].Notes + "</p>";
+      					}
+
+      					document.getElementById("Food").innerHTML = text;
+      				}
+
+      				// Looping Array Elements for Drinks
+      				function showInfoDrinks(results) {
+      					var drinks = results.data;
+      					var i;
+
+      					text = "<h5>";
+      					for (i = 0; i < drinks.length; i++) {
+      						text += drinks[i].Item + drinks[i].Price + "</h5>";
+      					}
+
+      					document.getElementById("Drinks").innerHTML = text;
+      				}
+      			</script>
+      		</div>
+
+      		<script>
+      			function openCity(evt, itemName) {
+      				var i, x, tablinks;
+      				x = document.getElementsByClassName("item");
+      				for (i = 0; i < x.length; i++) {
+      					x[i].style.display = "none";
+      				}
+      				tablinks = document.getElementsByClassName("tablink");
+      				for (i = 0; i < x.length; i++) {
+      					tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
+      				}
+
+      				document.getElementById(itemName).style.display = "block";
+      				evt.currentTarget.firstElementChild.className += " w3-border-blue";
+      			}
+      		</script>
+      	</div>
+      </div> <!-- End Content -->
+
+      <!-- Start Footer -->
+      <div class="footer">
+      	<div class="social">
+      		<a href="https://www.facebook.com/ArmandosHotFood" target="_blank"><img src="images/fb.png" id="fb"></a>
+      		<a href="https://www.instagram.com/armandoshotfood/" target="_blank"><img src="images/ig.png" id="ig"></a>
+      	</div>
+      	<p>&#169; 2020 Armando's Hot Food
+      		<br>Web Design by <a href="https://github.com/leslienochoa" target="_blank">Leslie Ochoa</p>
+      		</div> <!-- End Footer -->
+      	</body>
+      	</html>

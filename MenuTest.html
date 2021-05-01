@@ -7,9 +7,11 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
     <script type="text/javascript">
+      // Variables for URLs
       var food_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=0&single=true&output=csv'
       var drinks_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=1702788343&single=true&output=csv';
 
+      // Initializing Papa Parse
       function init() {
         Papa.parse(food_url, {
           download: true,
@@ -26,31 +28,35 @@
 
       window.addEventListener('DOMContentLoaded', init)
 
+      // Looping Array Elements for Food
       function showInfoFood(results) {
-        var food = results.data
+        var food = results.data;
         var i;
 
         text = "<ul>";
         for (i = 0; i < food.length; i++) {
           text += "<li>" + food[i].Item + " " + food[i].Price + "</li>"+ " " + food[i].Options + " " +food[i].Notes;
         }
-        text += "</ul>"
+        text += "</ul>";
 
-        document.getElementById("food").innerHTML = text;
+        document.getElementById("Food").innerHTML = text;
       }
 
-
+      // Looping Array Elements for Drinks
       function showInfoDrinks(results) {
-        var data = results.data
-
+        var drinks = results.data;
         var i;
 
-        for (i = 0; i < data.length; i++) {
-          document.getElementById("drinks").innerHTML = "<strong>Drinks:</strong> " + [data[i].Item].join(", ");
-          console.log(data);
+        text = "<ul>";
+        for (i = 0; i < drinks.length; i++) {
+          text += "<li>" + drinks[i].Item + " " + drinks[i].Price + "</li>";
         }
+        text += "</ul>";
+
+        document.getElementById("Drinks").innerHTML = text;
       }
 
+      // Published Spreadsheet Links
       document.write("<p>The published spreadsheet or food is located at <a target='_new' href='" + food_url + "'>" + food_url + "</a></p>");       
       document.write("<p>The published spreadsheet or drinks is located at <a target='_new' href='" + drinks_url + "'>" + drinks_url + "</a></p>");  
     </script>
