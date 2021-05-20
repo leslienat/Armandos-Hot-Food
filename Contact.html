@@ -8,8 +8,7 @@
     <meta name="description" content="A family owned Food Truck business serving authentic Mexican food made using fresh ingredients on the daily.">
     <meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- End Meta Tags -->
 
-
-	<title>Armando's Hot Food | Los Angeles, CA</title>
+	<title>Contacto | Armando's Hot Food</title>
 	
 	<!-- Start CSS -->
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -59,38 +58,40 @@
 
 	<!-- Start Content -->
 	<div class="content">
-		
-		<!-- Start Carousel -->
-		<div>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!--<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pjNWZXT7J8ulaiDHCJjOC4I4kVPLGw7h&language=es" width="100%" height="480"></iframe>-->
+		<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pjNWZXT7J8ulaiDHCJjOC4I4kVPLGw7h" width="100%" height="350"></iframe>
+		<div class="column-2-1">
+			<h2>Ubicaciones</h2>
+			<ul>
+				<li>
+					<h4>Armando's Hot Food (N Western Ave & Romaine St)</h4>
+					<p>5401-5423 Romaine St<br>Los Angeles, CA 90038<br>&#128222; <a href="tel:3238396048">(323) 839-6048</a><br>Horario: Lun.-Dom., 8AM-4PM</p>
+				</li>
+				<li>
+					<h4>Armando's Hot Food (Fountain Ave & St. Andrews Pl)</h4>
+					<p>1327-1301 St Andrews Pl<br>Los Angeles, CA 90028<br>&#128222; <a href="tel:3234694791">(323) 469-4791</a><br>Horario: Lun.-Vier. 8AM-4PM</p>
+				</li>
+			</ul>
+		</div>
+		<div class="column-2-2 container">
+			<form action="contact.php">
 
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-				</ol>
+				<label for="fname">Nombre</label>
+				<input type="text" id="fname" name="firstname" placeholder="Su nombre...">
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="images/slide1.jpg" style="width:100%;">
-					</div>
-					<div class="item">
-						<img src="images/slide2.jpg" style="width:100%;">
-					</div>
-				</div>
+				<label for="lname">Apellido</label>
+				<input type="text" id="lname" name="lastname" placeholder="Su apellido...">
 
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div> <!-- End Carousel -->
+				<label for="lname">Correo Electr&oacute;nico</label>
+				<input type="text" id="email" name="lastname" placeholder="Su correo electr&oacute;nico...">
+
+				<label for="subject">Asunto</label>
+				<textarea id="subject" name="subject" placeholder="Su asunto.." style="height:200px"></textarea>
+
+				<input type="submit" value="Submit">
+
+			</form>
+		</div>
 	</div> <!-- End Content -->
 
 	<!-- Start Footer -->

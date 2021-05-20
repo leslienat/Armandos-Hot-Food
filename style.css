@@ -97,13 +97,47 @@ h1 {
 .item p {
 	color: gray;
 	font-size: 85%;
-	text-indent: 3%;
+	padding-left: 3%;
 }
+
+/* Start Contact Form */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #0066CC;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #97d6d9;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  clear: all;
+}
+/* End Contact Form */
 
 /* Start Footer */
 .footer {
 	background-color: #CC4F0A;
-	clear: both;
+	clear: all;
 	color: #ffffff;
 	padding: 10px;
 	text-align: center;
@@ -193,6 +227,7 @@ h1 {
 @media screen and (max-width: 720px) {
   .column-2-1, .column-2-2 {
     clear: both;
+    width: 100%;
   }
 
 }

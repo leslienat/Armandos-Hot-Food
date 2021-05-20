@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<!-- Start Meta Tags -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="A family owned Food Truck business serving authentic Mexican food made using fresh ingredients on the daily.">
-	<meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- Meta Tags -->
+	<meta name="keywords" content="Food Truck, Food, Armandos Hot Food, Armando's Hot Food, Mexican Food, Mexican Restaurant, Family, Business, Comida Mexicana, Comida, Familia, Los Angeles, Restaurante"> <!-- End Meta Tags -->
 
-	<div></div>
-
-	<title>Menu | Armando's Hot Food</title>
+	<title>Men&uacute; | Armando's Hot Food</title>
 	
 	<!-- Start CSS -->
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -45,11 +43,11 @@
 
 		<!-- Start Navigation Menu -->
 		<div class="nav">
-			<div class="mobilenav">&#9776; Menu</div>
+			<div class="mobilenav">&#9776; Navegaci&oacute;n</div>
 			<ul class="nul">
-				<a href="/"><li>Home</li></a>
-				<a href="Menu.html"><li>Menu</li></a>
-				<a href="Contact.html"><li>Contact</li></a>
+				<a href="/"><li>Inicio</li></a>
+				<a href="Menu.html"><li>Men&uacute;</li></a>
+				<a href="Contact.html"><li>Contacto</li></a>
 			</ul>
 		</div>
 		<script>
@@ -65,26 +63,25 @@
 			<div class="w3-container">
 				<div class="w3-row">
 					<a href="javascript:void(0)" onclick="openCity(event, 'Food');">
-						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Food</div>
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Comida</div>
 					</a>
 					<a href="javascript:void(0)" onclick="openCity(event, 'Drinks');">
-						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Drinks</div>
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Bebidas y Bocadillos</div>
 					</a>
-					<a href="javascript:void(0)" onclick="openCity(event, 'Snacks');">
-						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Snacks</div>
+					<a href="javascript:void(0)" onclick="openCity(event, 'Specials');">
+						<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Especiales</div>
 					</a>
 				</div>
 
 				<div id="Food" class="w3-container item" style="display: block"></div>
 				<div id="Drinks" class="w3-container item" style="display: none"></div>
-				<div id="Snacks" class="w3-container item" style="display: none">
-					<h5>Chips - 2.00</h5>
-				</div>
+				<div id="Specials" class="w3-container item" style="display: none"></div>
 				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 				<script type="text/javascript">
 					// Variables for URLs
 					var food_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=0&single=true&output=csv'
 					var drinks_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=1702788343&single=true&output=csv';
+					var specials_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQ51oAU_dM4UD9O1gR-XMtUX9rQeP4n3jWUxUCEeooTBEPz_zYjSktFw6Vm8Uram8mGpPUF3l2Dy9X/pub?gid=1826270190&single=true&output=csv';
 
       				// Initializing Papa Parse
       				function init() {
@@ -99,6 +96,12 @@
       						header: true,
       						complete: showInfoDrinks
       					})
+
+      					Papa.parse(specials_url, {
+      						download: true,
+      						header: true,
+      						complete: showInfoSpecials
+      					})
       				}
 
       				window.addEventListener('DOMContentLoaded', init)
@@ -110,23 +113,37 @@
 
       					text = "<h5>";
       					for (i = 0; i < food.length; i++) {
-      						text += food[i].Item + " - " + food[i].Price + "</h5>"+ "<p>" + food[i].Options + " " +food[i].Notes + "</p>";
+      						text += food[i].Item + " - " + food[i].Price + "</h5>"+ "<p>" + food[i].Options + "<p/><p>" +food[i].Notes + "</p>";
       					}
 
       					document.getElementById("Food").innerHTML = text;
       				}
 
-      				// Looping Array Elements for Drinks
+      				// Looping Array Elements for Drinks/Snacks
       				function showInfoDrinks(results) {
       					var drinks = results.data;
       					var i;
 
       					text = "<h5>";
       					for (i = 0; i < drinks.length; i++) {
-      						text += drinks[i].Item + drinks[i].Price + "</h5>";
+      						text += drinks[i].Item + " - " + drinks[i].Price + "</h5>"+ "<p>" + drinks[i].Options + "<p/><p>" + drinks[i].Notes + "</p>";
       					}
 
       					document.getElementById("Drinks").innerHTML = text;
+      				}
+      				
+
+      				// Looping Array Elements for Specials
+      				function showInfoSpecials(results) {
+      					var specials = results.data;
+      					var i;
+
+      					text = "<h5>";
+      					for (i = 0; i < specials.length; i++) {
+      						text += specials[i].Item + " - " + specials[i].Price + "</h5>"+ "<p>" + specials[i].Options + "<p/><p>" + specials[i].Notes + "</p>";
+      					}
+
+      					document.getElementById("Specials").innerHTML = text;
       				}
       			</script>
       		</div>
@@ -153,11 +170,11 @@
       <!-- Start Footer -->
       <div class="footer">
       	<div class="social">
-      		<a href="https://www.facebook.com/ArmandosHotFood" target="_blank"><img src="images/fb.png" id="fb"></a>
-      		<a href="https://www.instagram.com/armandoshotfood/" target="_blank"><img src="images/ig.png" id="ig"></a>
+      		<a title="Facebook" href="https://www.facebook.com/ArmandosHotFood" target="_blank"><img src="images/fb.png" id="fb"></a>
+      		<a title="Instagram" href="https://www.instagram.com/armandoshotfood/" target="_blank"><img src="images/ig.png" id="ig"></a>
       	</div>
-      	<p>&#169; 2020 Armando's Hot Food
-      		<br>Web Design by <a href="https://github.com/leslienochoa" target="_blank">Leslie Ochoa</p>
+      	<p>&#169; 2020 - <script type="text/javascript">document.write( new Date().getFullYear() );</script> Armando's Hot Food
+      		<br>Dise&ntilde;o Creado por <a href="https://github.com/leslienochoa" target="_blank">Leslie Ochoa</p>
       		</div> <!-- End Footer -->
       	</body>
       	</html>
