@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Lang Test</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<a href="#eng" data-reload>English</a>
+	<a href="#es" data-reload>Español</a>
+	
+	<p id="hi">Welcome everyone!</p>
+
+	<script>
+		// Define Language Reload Anchors
+		var dataReload = document.querySelectorAll("[data-reload]");
+
+		// Language Translations
+		var language = {
+			eng: {
+				welcome: "Welcome everyone!"
+			},
+
+			es: {
+				welcome: "Bienvenidos todos!"
+			}
+		};
+
+		// Define Language via Window Hash
+		if (window.location.hash) {
+			hash = window.location.hash;
+			hash = hash.replace(/#/, '');
+
+			if (hash === "es") {
+				hi.textContent = language.es.welcome;
+			}
+			else {
+				hi.textContent = language.eng.welcome;
+			}
+		};
+
+		// Define Language Reload On Click Illiteration
+		$('[data-reload]').on('click', function() {
+			window.location.hash = this.getAttribute('href');
+			location.reload(true);
+		})
+	</script>
+</body>
+</html>
